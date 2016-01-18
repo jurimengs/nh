@@ -48,7 +48,7 @@ Lottery.prototype = {
     drawPoint: function (x, y) {
         this.maskCtx.beginPath();
         var radgrad = this.maskCtx.createRadialGradient(x, y, 0, x, y, 30);
-        radgrad.addColorStop(0, 'rgba(0,0,0,0.4)');
+        radgrad.addColorStop(0, 'rgba(0,0,0,0.6)');
         radgrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
         this.maskCtx.fillStyle = radgrad;
         this.maskCtx.arc(x, y, 10, 0, Math.PI * 2, true);
