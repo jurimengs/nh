@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>杉德年会-首页</title>
+	<link rel="stylesheet" href="../data/css/base.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/public.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/index.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="../data/css/widget/slider/slider.css" />
+    <link rel="stylesheet" type="text/css" href="../data/css/widget/slider/slider.default.css" />
+</head>
+<body class="body-bg">
+<!--top-->
+<div class="ico-more clear" onclick="goto('help.html')"><img src="../data/images/ico-more.png" width="30" height="30"></div>
+<!--top over-->
+<div class="main-ico clear">
+	<ul>
+    	<li class="center ico-seat"><a href="seat.html">我的席位</a></li>
+        <li class="center ico-prize"><a href="prize_not_winning.html">我的奖品</a></li>
+    </ul>
+</div>
+<div class="sub-ico clear">
+	<ul>
+    	<li class="center ico-traffic"><a href="traffic.html">交通</a></li>
+        <li class="center ico-parking"><a href="parking.html">泊车</a></li>
+        <li class="center ico-vote"><a href="program_vote.html">投票</a></li>
+    </ul>
+</div>
+<div class="index-slider clear">
+	<div id="slider" class="ui-slider" style="visibility: hidden;">
+		<div >
+			<a href="#"><img src="../data/images/Advert-01.png" ></a>
+		</div>
+		<div >
+			<a href="#"><img src="../data/images/Advert-02.png" ></a>
+		</div>
+        <!--
+		<div >
+			<a href="#"><img src="../data/images/c.jpg" ></a>
+		</div>-->
+	</div>
+</div>
+<div class="pos_relative clear">
+	<div class="global-tit-trans"></div>
+    <div class="global-titleb">谁中了大奖</div>
+	<div class="global-btn" onclick="javascript:SD.goUrl('win_single.html');">获奖单</div>
+</div>
+<ul class="msg-list-wrap center" id="msgid">
+	<li>大奖等你吃饱了才出来哦~</li>
+</ul>
+<!--footer-->
+<script language="javascript" src="../data/js/footer.js" id="footerScript" data-args="selecttype=index"></script>
+<!--footer over-->
+<script src="../data/js/zepto.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../data/js/extend/touch.js"></script>
+<script type="text/javascript" src="../data/js/extend/matchMedia.js"></script>
+<script type="text/javascript" src="../data/js/extend/event.ortchange.js"></script>
+<script type="text/javascript" src="../data/js/extend/parseTpl.js"></script>
+<script type="text/javascript" src="../data/js/core/gmu.js"></script>
+<script type="text/javascript" src="../data/js/core/event.js"></script>
+<script type="text/javascript" src="../data/js/core/widget.js"></script>
+<script type="text/javascript" src="../data/js/widget/slider/slider.js"></script>
+<!--<script type="text/javascript" src="js/widget/slider/arrow.js"></script>-->
+<script type="text/javascript" src="../data/js/widget/slider/dots.js"></script>
+<script type="text/javascript" src="../data/js/widget/slider/$touch.js"></script>
+<script type="text/javascript" src="../data/js/widget/slider/$autoplay.js"></script>
+<script type="text/javascript" src="../data/js/widget/slider/$lazyloadimg.js"></script>
+<script type="text/javascript" src="../data/js/widget/slider/imgzoom.js"></script>
+<script type="text/javascript" src="../data/js/base.js"></script>
+<script type="text/javascript" src="../data/js/service.js"></script>
+<script>
+function fmtRewardState(types){
+	if(types=='5'){
+		return "五等";
+	}else if(types=='4'){
+		return "四等";
+	}else if(types=='3'){
+		return "三等";
+	}else if(types=='t12'){
+		return "特等、一等，二等";
+	}else if(types=='bt12'){
+		return "补抽";
+	}else if(types=='h'){
+		return "欢乐";
+	}
+}
+function pmtRewardState(types){
+	if(types=='5'){
+		return "picture5";
+	}else if(types=='4'){
+		return "picture4";
+	}else if(types=='3'){
+		return "picture3";
+	}else if(types=='t12'){
+		return "picture2";
+	}else if(types=='bt12'){
+		return "picture1";
+	}else if(types=='h'){
+		return "picture1";
+	}
+}
+function fmtMobile(mobile){
+	return mobile.substring(0,3)+"****"+mobile.substring(7,11);
+}
+$('#slider').slider({imgZoom: false ,ready:function(){$('#slider').css('visibility','visible');}});
+var parpams = "\"phoneNumber\":\""+openid+"\","+
+			  "\"level\":\"\","+
+			  "\"currentPage\":\"1\","+
+			  "\"pageLine\":\"10\","+
+			  "\"type\":\"5\"";
+serviceAjax(parpams,"00050019",function(data){
+	var resultList = data.busiInfo.resultInfo;
+	var appendhtml = "";
+	for(var i = 0;i<resultList.length;i++){
+		appendhtml+="<li>";
+		appendhtml+="<p class=\"c-"+pmtRewardState(resultList[i].rewardState)+"\">"+fmtRewardState(resultList[i].rewardState)+"奖"+"</p>";  
+		appendhtml+="<a href=\"javascript:void(0)\">";
+		appendhtml+="<p class=\"c-585858\">[恭喜]"+"手机号码："+fmtMobile(resultList[i].moible)+"&nbsp;&nbsp;&nbsp;&nbsp;"+resultList[i].company+"&nbsp;"+resultList[i].memname+"</p>";
+		appendhtml+="<p class=\"c-cccccc\">请到领奖处领奖"+"</p>";
+		/*appendhtml+="<p class=\"c-line\">"+resultList[i].ctime+"</p>";*/
+		appendhtml+="</a>";
+		appendhtml+="</li>";
+	}
+	if(resultList.length==0){
+		$('#msgid').html("<li>暂时无中奖信息</li>");
+	}else{
+		$('#msgid').html(appendhtml);
+	}
+});
+
+function goto(url) {
+  window.location.href=url;
+}
+
+</script>
+</body>
+</html>

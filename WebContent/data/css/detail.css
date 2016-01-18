@@ -1,0 +1,106 @@
+.detail-buyit{
+	border-bottom: 1px solid #d4d4d4;
+	border-top: 1px solid #d4d4d4;
+	height: 44px;
+	background: #fff;
+	width: 100%;
+        position: relative;
+}
+.detail-classify{
+	float: left;
+	width: 55%;
+	height: 44px;
+	position: relative;
+	border-right: 1px solid #d4d4d4;
+	box-sizing:border-box;
+}
+.detail-pw{
+	height: 44px;
+	line-height: 44px;
+	background: url(../images/down_arrow.png) no-repeat 95%;
+	background-size: 14px;
+}
+.detail-price{
+	float: left;
+	width: 70%;
+	color: #ff6565;
+	padding-left: 10px;
+box-sizing:border-box;
+}
+.detail-weight{
+	float: left;
+	width: 30%;
+	color: #8e8e8e;
+}
+.detail-price-list{
+	position: absolute;
+	top: 45px;
+	left: 0;
+	width: 100%;
+	z-index: 9999;
+	border-right: 1px solid #d4d4d4;
+	max-height: 140px;
+	overflow-y: scroll;
+}
+.detail-price-list li{
+	border-bottom: 1px solid #d4d4d4;
+	line-height: 44px;
+	background-color: #fff;
+	clear:both; overflow:hidden; zoom:1;
+}
+.detail-price-list li .dpl-span{
+	float: left;
+	width: 70%;
+	color: #ff6565;
+	padding-left: 10px;
+box-sizing:border-box;
+}
+.detail-price-list li .dpl-label{
+	float: left;
+	width: 30%;
+	color: #8e8e8e;
+	text-align: center;
+}
+.detail-num{
+	float: left;
+	width: 15%;
+	height: 44px;
+	line-height: 44px;
+	color: #8e8e8e;
+	text-align: center;
+	box-sizing:border-box;
+	position: relative;
+	border-right: 1px solid #d4d4d4;
+}
+.detail-current-num{
+	display: block;
+}
+.detail-num-list{
+	position: absolute;
+	left: -1px;
+	top: 45px;
+	width: 100%;
+	border-left: 1px solid #d4d4d4;
+	border-right: 1px solid #d4d4d4;
+	z-index: 9999;
+	max-height: 140px;
+	overflow-y: scroll;
+}
+.detail-num-list li{
+	border-bottom: 1px solid #d4d4d4;
+	line-height: 44px;
+	background-color: #fff;
+	text-align: center;
+	color: #8e8e8e;
+}
+.detail-buy-btn{
+	float: left;
+	width: 30%;
+	height: 44px;
+	box-sizing:border-box;
+	color: #fff;
+	line-height: 44px;
+	text-align: center;
+	background-color: #ff6565;
+	cursor: pointer;
+}

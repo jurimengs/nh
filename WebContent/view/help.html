@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>现场指导</title>
+	<link rel="stylesheet" href="../data/css/public.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/order.css" type="text/css">
+
+</head>
+<body class="body-bg">
+<!--页头-->
+<script language="javascript" src="../data/js/header.js" id="headerScript" data-args="headername=现场指导&nbsp; &headerbackurl=index.html"></script>
+<!--页头 结束-->
+<div class="clear main_tit pos_relative" >
+	<div class="fl_left" style="margin-bottom:25%;">
+		<div class="size-m clear">毛丽敏<span class="size-s marg_lef_1em">指导</span></div>
+        <p style="color:#fff;">1590191814</p>
+    </div>
+    <div class="fl_right" style="margin-bottom:25%;">
+    	<div class="size-m clear">穆建义<span class="size-s marg_lef_1em">技术</span></div>
+        <p style="color:#fff;">1590191814</p>
+    </div>
+</div>
+<div class="clear">
+	<div class="global-tit-trans"></div>
+    <div class="global-titleb">需要帮助的小伙伴，请联系以上人员</div>
+</div>
+<div class="global-navb height_whole guide-bg">
+	<div class="submit-btn" id="loginout">退出登录</div>
+</div>
+
+<!--<div class="global-navb">
+	<h2 class="global-titleb">帮助</h2>
+    <ul class="traffic-text">
+    	<li style="font-weight:bold;">年会中有需要帮助的同事，请联系以下人员</li>
+        <li>[年会]&nbsp;&nbsp;毛丽敏&nbsp;&nbsp; 13801668985</li>
+        <li>[技术]&nbsp;&nbsp;桂勇保&nbsp;&nbsp; 15921026818</li>
+    </ul>
+</div>
+<div class="submit-btn" id="loginout">
+    退出登录
+</div>-->
+<!--页尾-->
+<script language="javascript" src="../data/js/footer.js" id="footerScript" data-args="selecttype=user_more"></script>
+<!--页尾 结束-->
+<script src="../data/js/zepto.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../data/js/base.js"></script>
+<script type="text/javascript" src="../data/js/service.js"></script>	
+<script>
+$('#loginout').bind("click",function(){
+    var strCookie = document.cookie;
+    var arrCookie = strCookie.split("; ");
+    var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+    for (var i = 0; i < arrCookie.length; i++) {
+        var arr = arrCookie[i].split("=");
+        document.cookie = arr[0] + "=; path=/; expires=" + exp.toGMTString();
+    }
+    SD.goUrl("login.html");
+});
+</script>
+</body>
+</html>

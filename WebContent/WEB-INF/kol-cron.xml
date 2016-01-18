@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop" 
+		xmlns:p="http://www.springframework.org/schema/p" 
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+ 
+ <!-- <bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+  <property name="corePoolSize" value="2" />
+  <property name="maxPoolSize" value="2" />
+  <property name="queueCapacity" value="2" />
+  <property name="allowCoreThreadTimeOut" value="true"/>
+ </bean>
+
+ <bean id="cronServiceManager" class="com.org.cron.CronServiceManager" scope="singleton">
+  <property name="taskExecutor" ref="taskExecutor"/>
+ </bean>
+
+<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <property name="triggers">
+        <list>
+            <ref local="stepCronTrigger0"/>
+        </list>
+    </property>
+</bean>
+
+<bean id="stepCronTrigger0" class="org.springframework.scheduling.quartz.CronTriggerBean">
+    <property name="jobDetail" ref="stepJobDetail" />
+    <property name="cronExpression" >
+        <value>${cron.task.time0}</value>
+    </property>
+</bean>
+
+<bean id="stepJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject" ref="cronServiceManager"></property>
+    <property name="targetMethod" value="service_step0"></property>
+    <property name="concurrent" value="false"></property>
+</bean>
+
+
+<bean id="cronServcie" class="com.org.cron.CronService" abstract="true"/>
+ -->
+</beans>

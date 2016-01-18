@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+	                    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+	                    http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
+
+    <!-- include properties    -->	
+	<context:property-placeholder location="/WEB-INF/config/smps_spring_*.properties"/>
+	
+	<!-- dataSource for HikariCP configuration 
+	<bean id="hikaricp" class="com.zaxxer.hikari.HikariDataSource" destroy-method="shutdown">
+	    <constructor-arg>
+	        <bean class="com.zaxxer.hikari.HikariConfig">
+	           <property name="driverClassName" 	value="${hikaricp.jdbc.driverClassName}"/>
+	           <property name="jdbcUrl" 			value="${hikaricp.url}"/>
+	           <property name="username" 			value="${hikaricp.username}"/>
+	           <property name="password" 			value="${hikaricp.password}"/>
+	           <property name="connectionTestQuery" value="${hikaricp.connectionTestQuery}"/>
+	           <property name="connectionTimeout" 	value="${hikaricp.connectionTimeout}"/>
+	           <property name="idleTimeout" 		value="${hikaricp.idleTimeout}"/>
+	           <property name="maxLifetime" 		value="${hikaricp.maxLifetime}"/>
+	           <property name="maximumPoolSize" 	value="${hikaricp.maximumPoolSize}"/>
+	           <property name="minimumIdle" 		value="${hikaricp.minimumIdle}"/>
+	      </bean>
+	   </constructor-arg>
+    </bean>
+    -->
+	<!-- datasource manager
+	<bean id="connectionManager" class="com.org.smp.server.core.db.ConnectionManager">
+	  <property name="hikaricp" ref="hikaricp"/>
+	</bean>
+	 -->
+	 
+	<!-- mongo cache  default name mongo 
+    <mongo:mongo id="mongo" replica-set="172.28.250.86:27017">
+       <mongo:options   
+       		 connections-per-host="8"
+             threads-allowed-to-block-for-connection-multiplier="4"
+             connect-timeout="10000"   
+             max-wait-time="15000"
+             auto-connect-retry="true"
+             socket-keep-alive="true"
+             socket-timeout="15000"
+             slave-ok="true"
+             write-number="1"
+             write-timeout="0"
+             write-fsync="true" />
+    </mongo:mongo> 
+    <mongo:db-factory dbname="sd_monitor_db" mongo-ref="mongo"/>  
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate"> 
+          <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>   -->
+          <!-- 或者
+          	<constructor-arg ref="mongo"/>  
+           	<constructor-arg name="databaseName" value="test"/>  
+          -->
+          <!--
+    </bean>  
+    -->
+    
+	
+</beans>

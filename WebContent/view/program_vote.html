@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>杉德年会-节目投票</title>
+	<link rel="stylesheet" href="../data/css/base.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/public.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/index.css" type="text/css">
+</head>
+<body class="body-bg">
+<!--页头-->
+<script language="javascript" src="../data/js/header.js" id="headerScript" data-args="headername=投票&headerbackurl=index.html"></script>
+<!--页头 结束-->
+<!--<div id="votes" class="votes"></div>-->
+<div class="clear pos_relative">
+	<div class="global-tit-trans"></div>
+    <div class="global-titleb">请投出您宝贵的一票</div>
+</div>
+<div class="global-navb height_whole vote-inp">
+	 <ul>
+    	<li>
+        	<div class="fl_left vote-sel"></div>爵士舞<span class="vote-num">(<font>10</font>票)</span>
+            <div class="vote-get" style="width:1%;"></div>
+            <div class="vote-total"></div>
+        </li>
+        <li>
+        	<div class="fl_left vote-sel"></div>歌曲串烧<span class="vote-num">(<font>22</font>票)</span>
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+        <li>
+        	<div class="fl_left vote-sel"></div>卷珠帘<span class="vote-num">(<font>32</font>票)</span><img class="vote-num" src="../data/images/ico-correct.png" width="14" height="12">
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+        <li>
+        	<div class="fl_left vote-sel"></div>青春物语<span class="vote-num">(<font>155</font>票)</span>
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+        <li>
+        	<div class="fl_left vote-sel"></div>神话<span class="vote-num">(<font>214</font>票)</span>
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+        <li>
+        	<div class="fl_left vote-sel"></div>小品《过年》<span class="vote-num">(<font>54</font>票)</span>
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+        <li>
+        	<div class="fl_left vote-sel"></div>小苹果<span class="vote-num">(<font>67</font>票)</span>
+            <div class="vote-get" style="width:0%;"></div>
+            <div class="vote-total"></div></li>
+    </ul>
+    <div class="vote-btn" >投票</div>
+</div>
+<!--页尾-->
+<script language="javascript" src="../data/js/footer.js" id="footerScript" data-args="selecttype=activity"></script>
+<!--页尾 结束-->
+<script src="../data/js/zepto.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../data/js/base.js"></script>
+<script type="text/javascript" src="../data/js/service.js"></script>
+<script>
+function thevote(pnumber){
+	var parpams = "\"phoneNumber\":\""+openid+"\","+
+					  "\"pnumber\":\""+pnumber+"\","+
+					  "\"type\":\"1\"";
+	serviceAjax(parpams,"00050018",function(data){
+		toastr['info']("投票成功");
+		$('.submit-btn').css("background","#cccccc").css("border-bottom","1px solid #cccccc");
+		$('#votebtn').unbind();
+		$('.pcount').show();
+
+	});
+}
+var parpams = "\"phoneNumber\":\""+openid+"\","+
+					  "\"pnumber\":\"\","+
+					  "\"type\":\"2\"";
+serviceAjax(parpams,"00050018",function(data){
+	var resultList = data.busiInfo.resultInfo;
+	var appendhtml = "";
+	for(var i = 0;i<resultList.length;i++){
+		appendhtml+="<div class=\"pinline\">";
+		appendhtml+="<div class=\"pinput\">";
+		appendhtml+="<input type=\"radio\" class=\"vote\" name=\"vote\" value=\""+resultList[i].pnumber+"\" />"+resultList[i].pname;
+		appendhtml+="</div>";
+		appendhtml+="<div class=\"pcount\">投票数："+resultList[i].pcount+"</div>";
+		appendhtml+="</div>";
+	}
+	appendhtml+="<div class=\"submit-btn\" id=\"votebtn\">确定</div>";
+	if(resultList.length==0){
+		$('#votes').html("<div>暂时无法获取信息</div>");
+	}else{
+		$('#votes').html(appendhtml);
+	}
+	if(data.busiInfo.state == "1"){
+		$('.pcount').hide();
+		$('#votebtn').bind("click",function(){
+			var votes =$('.vote');
+			var flag = false;
+			var pnumber ="";
+			for(var i =0 ;i <votes.length ; i++){
+				if(votes[i].checked){
+					pnumber=votes[i].value;
+					flag=true;
+				}
+			}
+			if(!flag){
+				toastr['info']("请选择节目！");
+			}else{
+				thevote(pnumber);
+			}
+		});
+	}else{
+		$('.submit-btn').css("background","#cccccc").css("border-bottom","1px solid #cccccc");
+	}
+});
+</script>
+</body>
+</html>

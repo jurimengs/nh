@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+
+/***modal***/
+*{ margin:0; padding:0; font-family:"Microsoft Yahei";}
+ul,li{ margin:0; padding:0; list-style-type:none;}
+.fl_left{ float:left;}
+.message,.modal {
+	background: rgba(0, 0, 0, 0.65);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 10001;
+	top: 0;
+	left: 0;
+}
+.clear{clear:both;}
+.message .modal {
+	background: none;
+	top: inherit;
+	left: inherit;
+}
+/**修改**/
+.message .modal,.modal-box,.message-box {
+	width: 1100px;
+	height:620px;
+	background:url(../images/pop-bg-mid.jpg) repeat-x 0 0;
+	margin: 0 auto;
+	border-radius: 4px;
+	position: relative;
+	top:50%;
+	margin-top:-300px;
+	overflow: hidden;
+}
+
+.modal .close:hover {
+	text-decoration: none;
+}
+
+.modal-alert {
+	width: 320px;
+	font-size: 20px;
+	margin: 12% auto 0 auto;
+	background: #fff;
+	border-radius: 2px;
+	padding: 10px;
+	text-align: center;
+}
+
+.modal-title,.modal-header,.message-box h3 {
+	color: #c40202;
+	margin: 0;
+}
+/**修改**/
+.modal-content,.modal-body,.message-box .message-content {
+	/*height:496px;
+	padding:5px 10px 5px 10px;*/
+}
+/**新增**/
+.modal-body{
+	position:absolute;
+	z-index:9999;
+	overflow-y:auto;
+	overflow-x:hidden;
+	height:450px;
+	width:810px;
+	left:50%;
+	margin:20px 0 50px -390px;
+	/*margin:20px 0 50px 120px;*/
+	white-space:nowrap;
+	padding:0px;
+}
+.person_box{ margin-right:2%; width:23%; margin-bottom:10px;}
+.dot_line{ width:750px; border-bottom:2px dotted #660000;margin:5px 15px 15px 0px;}
+/**新增 over**/
+/**修改**/
+.modal-body li{
+	
+	color:#1b264d;
+	font:normal 20px "Microsoft Yahei";
+	/*width:640px;display:inline-block;*/
+}
+.name-menu tr td{
+	height:22px;
+	padding-left:10px;
+	white-space:nowrap;
+}
+.com_name{ font-weight:normal; background-color:#cc3333; color:#ffffff; font-size:14px; padding:0px 3px; margin-left:2px;-moz-border-radius: 3px;/* Gecko browsers */-webkit-border-radius: 3px;   /* Webkit browsers */ border-radius:3px;/* W3C syntax */}
+.com_phone{font:normal 13px 'Microsoft Yahei';}
+/**修改 over**/
+.modal-footer,.message-footer {
+	padding: 10px;
+	background: #f3f3f3;
+	border-top: 1px solid #fff;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	text-align: center;
+}
+
+.modal-alert .modal-content {
+	border: none;
+}
+
+.modal-show {
+	visibility: hidden;
+	position: absolute;
+}
+
+.modal-show+.modal {
+	display: none;
+}
+
+.modal-show:checked+.modal {
+	display: block;
+}
+
+.modal-box.dark,.modal-alert.dark {
+	background: rgba(0, 0, 0, 0.65);
+	color: #fff;
+	border: 1px solid rgba(121, 157, 222, 0.2);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1)
+}
+
+.modal, .message{
+	background:url(../images/cover_65.png);
+}
+.close{
+	right:2px;
+	top:2px;
+	width:38px;
+	height:34px;
+	/*font:normal 42px/12px "Microsoft Yahei";*/
+	cursor:pointer;
+	border:none;
+	color:#e04927;
+	text-align:center;
+	padding:0;
+	position:absolute;
+	margin:10px 20px 0 0;
+	background-clolor:#fefffd;
+	border-radius:3px;
+}
+.close:hover{
+	background-clolor:#e04927;
+	color:#e04927;
+	border-radius:0px;
+}
+/**修改**/
+.top-mid-bg{
+	text-align:center;
+	width:100%;
+	height:80px;
+	background:url(../images/bg-mid.jpg) no-repeat center top;
+}
+.top-mid-txt{
+	text-align:center;
+	font:normal 20px/30px 'Microsoft Yahei';
+	color:#d85e05;
+	width:100%;
+	height:30px;
+	padding-top:55px;
+	display:block;
+}
+/**修改 over**/
+/**新增**/
+.modal-bg{
+	width:137px;
+	height:600px;
+}
+.bg-left{
+	background:url(../images/pop-bg-left.jpg) no-repeat 0 0;
+	float:left;
+}
+.bg-right{
+	background:url(../images/pop-bg-right.jpg) no-repeat 0 0;
+	float:right;
+}
+/**新增 over**/

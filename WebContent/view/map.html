@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no,user-scalable=yes">
+	<title>杉德年会-座席</title>
+	<link rel="stylesheet" href="../data/css/base.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/public.css" type="text/css">
+	<link rel="stylesheet" href="../data/css/index.css" type="text/css">
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+</head>
+<body class="body-bg">
+<!--top-->
+<script language="javascript" src="../data/js/header.js" id="headerScript" data-args="headername=座席图&headerbackurl=seat.html"></script>
+<!--top over-->
+<div id="wrapper" class="global-navb">
+	<div id="scroller"  class="seat-pic"></div>
+</div>
+<!---->
+<div class="global-navb height_whole">
+    <div id="jc" class="seatzoom">
+        <div class="zoomsize" id="addBtn">+</div>
+        <div class="zoomsize" id="deleteBtn">-</div>
+    </div>
+</div>
+<!--footer-->
+<script language="javascript" src="../data/js/footer.js" id="footerScript" data-args="selecttype=activity"></script>
+<!--footer 结束-->
+<script>
+function imgChange(scalenum, operflag) {
+	var aim = $('#scroller');
+	if(aim.width()<= 320 && operflag == "delete"){
+		return;
+	}
+	if(aim.width()>= 2160 && operflag == "add"){
+		return;
+	}
+	var oldwidth = aim.width();
+	var oldheight = aim.height();
+	
+	var newwidth = oldwidth + 200*scalenum;
+	var newheight = oldheight + 200*scalenum;
+	
+	aim.animate({"width": newwidth+"px", "height": newheight+"px"});
+	
+	/* $('#scroller').width($('#scroller').width()+200*scalenum);
+	$('#scroller').height($('#scroller').height()+200*scalenum); */
+}
+
+$('#addBtn').click(function(){
+	imgChange(+1, 'add');
+});
+
+$('#deleteBtn').click(function(){
+	imgChange(-1, 'delete');
+});
+</script>
+</body>
+</html>

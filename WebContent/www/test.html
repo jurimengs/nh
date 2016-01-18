@@ -1,0 +1,21 @@
+
+sssssssssssssssssssssss
+<script>
+
+           document.addEventListener("deviceready",onDeviceReady, false);
+
+           function onDeviceReady() {
+
+               window.echo("Hello,Plugin!", function(echoValue) {
+
+                   alert(echoValue == "Hello,Plugin!");
+
+               }, "Camera", "camera");
+
+            }
+
+window.echo = function(str, callback, aimFun, ac) {
+   cordova.exec(callback,  function(err){callback('Nothing to echo.'); },  aimFun, ac,  [str]);
+}
+
+</script>

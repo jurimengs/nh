@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>人生百科 WEB人生百科 webrsbk 人生百科登录页面</title>
+<meta name="description"
+	content="人生百科,WEB人生百科,webrsbk,提高你的人生高度,工作频道,生活频道,纪念版,创造人生价值,创造社会价值">
+<meta name="keywords" content="人生百科">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/simple.css">
+<link rel="stylesheet" href="css/pad.css" media="only screen and (max-width : 768px)">
+
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.SuperSlide.2.1.1.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="/js/html5shiv.min.js"></script>
+<script src="/js/respond.min.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="/js/DD_belatedPNG.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--修复IE6下PNG图片背景透明-->
+<style type="text/css">
+
+@media screen and (max-width: 600px) {
+	.mainDiv {
+		width: 100%;
+		padding-top: 80px;
+		margin-left: 120px;
+	}
+}
+
+</style>
+</head>
+
+<body>
+	<div id="nav" class="div_nav">
+		<!-- 边距152px -->
+		 
+		<ul>
+			<li class="li_active"><div class="logo_small"></div></li>
+			<li class="li_active">首页</li>
+			<li>纪念板</li>
+			<li>先吐为快</li>
+			<li>猜猜我是谁</li>
+			<li>看看别人说</li>
+			<li>加入我们</li>
+			<li class="login_li" onclick='formTo("channelForm", "/user/toLogin.do");'>登录网页版 >></li>
+		</ul>
+	</div>
+	<div id="maindiv" class="div_main">
+		<div class="div_main_words">
+			<table class="table_main_words" cellpadding="3" cellspacing="0">
+				<tr><td colspan="2" class="td_words_title">人生百科 - 放松你我他</td></tr>
+				<tr><td class="span_words_content_a">人生百科</td><td >互联网人的网上家园</td></tr>
+				<tr><td >先吐为快</td><td >在这里没有什么不能明言</td></tr>
+				<tr><td >纪念板</td><td >这里的我们,都会为你的纪念点赞</td></tr>
+				<tr><td >猜猜我是谁</td><td >留下点蛛丝马迹, 让他们快乐的猜翻天</td></tr>
+			</table>
+		</div>
+		<div class="div_cup">
+		</div>
+	</div>
+	<div id="div_foot">
+		<div>马上进入</div>
+	</div>
+
+	<br />
+</body>
+
+<form id="channelForm" action="/channel/life.do" method="post">
+</form>
+<script type="text/javascript" src="/js/common.js"></script>
+<script type="text/javascript" src="/js/business.js"></script>
+<script type="text/javascript" src="/js/listener.js"></script>
+</html>

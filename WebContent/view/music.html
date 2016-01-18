@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>控制音乐播放的html5程序</title>
+    <style>
+        #mymusic{
+            border: 1px solid red;
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        function audioPlay(){
+              document.getElementById("myaudio").play();
+        }
+
+        function goToFirst(){
+            document.getElementById("myaudio").currentTime=0;
+            document.getElementById("myaudio").play();
+        }
+
+        function audioPause(){
+            document.getElementById("myaudio").pause();
+        }
+    </script>
+</head>
+<body>
+    <div id="mymusic">
+        <!--
+           paly()  播放
+           pause()  暂停
+           load()  加载
+           canPlayType()  是否可以播放，不可以为空,可以maybe
+           currentTime   当前播放时间
+           duration    视频/音频的时长
+           paused   是否暂停
+           ended  是否播放到最后
+           playbackRate  播放速度，2表示两倍，可以指定小数，指定数值太大时候，不能够播放声音
+        -->
+        <audio id="myaudio">
+            <source src="/files/music/start.wav">
+            播放音频
+        </audio>
+        <button onclick="audioPlay()">播放</button>
+        <button onclick="goToFirst()">从头播放</button>
+        <button onclick="audioPause()">暂停</button>
+    </div>
+    <form action="/sandYear.do" method="post">
+    <input type="checkbox" name="gr" value="1"/>
+    <input type="checkbox" name="gr" value="2" />
+    <input type="submit" value="test" />
+    </form>
+</body>
+</html>

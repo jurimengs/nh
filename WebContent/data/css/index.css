@@ -1,0 +1,153 @@
+.msg-list-wrap{
+	/*background-color:#7a1f6a;*/
+	background: rgba(122, 31, 106, 1);
+	min-height:300px;
+	width:100%;
+	padding-bottom:80px;
+	/*position:fixed;*/
+}
+.msg-list-wrap li{
+	border-bottom: 1px solid #a0378d;
+	background:url(../images/name-line.jpg) no-repeat 18px center;
+	background-size:2px 35px;
+	padding:10px 18px 10px 30px;
+	clear:both;
+	overflow:hidden;
+	color:#ffffff;
+	font:normal 1em "Microsoft Yahei";
+	/*margin-left:30px;*/
+}
+.msg-list-wrap li a{
+	display: block;
+	float:left;
+	position: relative;
+	color:#585858;
+}
+.msg-list-wrap li a p{
+	margin-left: 10px;
+	padding-top:0px;
+}
+.msg-list-img{
+	width: 38px;
+	height: 20px;
+	position: absolute;
+	top: 11px;
+	left: 0;
+}
+.prize-get{color:blue; background-color:#681559; font-size:0.9em;color:#e5aa5b; padding:2px 8px; /*margin-left:3px;*/
+-moz-border-radius: 3px;/* Gecko browsers */-webkit-border-radius: 3px;   /* Webkit browsers */ border-radius:3px;/* W3C syntax */}
+.winprize {
+	height:360px;
+}
+.winprize li{
+	left:0;
+	width:180px;
+	margin:0 auto;
+	border-bottom:none;
+	/*padding-left:105px;*/
+	height:160px;
+	padding-top:15px;
+}
+.winprize span{
+	display:block;
+}
+.winprize img{
+	float:left;
+}
+.win-text{
+	float:left;
+}
+.view_more {
+	height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.view_more.hovercss{background-color: #6f747a;color: #fff}
+.msg-list-title{
+	margin-top:3px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	padding:10px 0px;
+	clear:both;
+	overflow:hidden;
+	background:#ffffff url(../images/desknum-me.png) no-repeat 10px 8px;
+	text-indent:40px;
+	font:bold 16px "Microsoft Yahei";
+}
+.tableP p{
+	margin-top:10px;
+	margin-bottom:10px;
+	display:inline-block;
+	width:auto;
+	white-space:nowrap;
+}
+.tableP li{
+	margin-left:30px;
+}
+.tableP .hovercss{
+	/*background-color: red;*/
+	color: #fff;
+	font-weight:bold;
+}
+.votes {
+	margin-top:3px;
+	padding-top: 0px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	background-color: #fff;
+	padding-bottom: 10px;
+}
+.vote {
+	margin: 10px 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	background-color: #ff6565;
+	border-bottom: 1px 
+}
+#wrapper {
+	position:absolute; 
+	top:44px; 
+	bottom:0px; 
+	width:100%;
+	overflow:auto;
+}
+
+#scroller {
+	/*position:absolute; 
+	width:100%;
+	padding:0;*/
+}
+.pcount{
+	display: inline-block;
+	width:50%;
+}
+.pinput{
+	display: inline-block;
+	width:50%;
+}
+.pinline{
+	border-bottom:1px solid #cecece;
+	clear:both;
+	padding:10px 0;
+}
+.ico-more{
+	 float:right; 
+	 clear:both;
+	 overflow:hidden;
+	 margin:0.2em 1em 0 0;
+	 cursor:pointer;
+}
+.main-ico{overflow:hidden; border-bottom:1px solid #d2456c; /*padding-bottom:1em;*/}
+.main-ico li{ display:inline-block; float:left;width:50%;}
+.main-ico li a{margin:48% 0 26% 0; display:block;color:#FFFFFF;font:bold 1.1em "Microsoft Yahei";}
+.ico-seat{ background:url(../images/ico-seat.png) no-repeat center 35%; background-size:40px 41px;}
+.ico-prize{background:url(../images/ico-prize.png) no-repeat center 35%; background-size:40px 41px;}
+
+.sub-ico{overflow:hidden; margin:0 0 0 4%; /*padding-bottom:1em;*/}
+.sub-ico li{ display:inline-block; float:left;width:32%;}
+.sub-ico li a{margin:42% 0 18% 0; display:block;color:#FFFFFF;font:normal 1em "Microsoft Yahei";}
+.ico-traffic{ background:url(../images/ico-traffic.png) no-repeat center 35%; background-size:17px 21px;}
+.ico-parking{background:url(../images/ico-parking.png) no-repeat center 35%; background-size:17px 21px;}
+.ico-vote{background:url(../images/ico-vote.png) no-repeat center 35%; background-size:17px 21px;}
