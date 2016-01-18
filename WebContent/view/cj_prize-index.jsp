@@ -141,6 +141,8 @@
 </body>
 <script type="text/javascript">
 
+//startRotate();
+//setTimeout("stopRotate('15921552144,,tes')", 100);
 //g_audio.push({song_id:"aaa",song_fileUrl:"http://payment-test.sandpay.com.cn/files/music/start.wav"});
 var award = {};
 
