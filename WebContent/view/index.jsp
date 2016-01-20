@@ -35,10 +35,10 @@
 </div>
 <div class="index-slider clear">
 	<div id="slider" class="ui-slider" style="visibility: hidden;">
-		<div >
+		<div style="background:url(/data/images/Advert-01-bg.png) repeat 0 0 / 78px 77px; width:100%;height:100%;">
 			<a href="#"><img src="/data/images/Advert-01.png" ></a>
 		</div>
-		<div >
+		<div style="background:url(/data/images/Advert-02-bg.png) repeat 0 0 / 15px 15px; width:100%;height:100%;">
 			<a href="#"><img src="/data/images/Advert-02.png" ></a>
 		</div>
         <!--

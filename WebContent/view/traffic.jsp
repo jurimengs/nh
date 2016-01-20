@@ -25,9 +25,10 @@
 </div>
 <div class="global-navb traffic-bg">
 	<ul>
-		<li><strong style="color:#f90;">[ 地铁引导员 ] </strong> 徐芸 13816391516</li>
-    	<li>7号线  <strong style="color:#f90;"> 行知路 </strong> 站下，1号口出，换乘接驳车抵达（约1.4公里，步行19分钟左右）</li>
-        <li>845路、 959路、974路、165路、79路、 206路、 758路</li>
+		<li><strong style="color:#f96;">[ 地铁引导员 ] </strong> 徐芸 13816391516</li>
+    	<li>7号线  <font style="color:#f68;"> 行知路 </font> 站下，1号口出，换乘接驳车抵达（约1.4公里，步行19分钟左右）</li>
+        <div style="background:url(/data/images/p.png) no-repeat 0 0 / 100% ; width:100%; height:209px;clear:both;border:0;padding:0;margin:0;"></div>
+        <li><strong style="color:#f96;">[ 公交 ] </strong> 845路、 959路、974路、165路、79路、 206路、 758路</li>
         <!--  
         <li style="width:330px; height:300px; margin-left:0px;">
         	<img id="map" src="/data/images/map.png" style="width:325px; height:200px;">

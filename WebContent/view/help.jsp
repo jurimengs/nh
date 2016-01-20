@@ -114,11 +114,11 @@ function codebarScannCallback(res){
 	<div class="global-tit-trans"></div>
     <div class="global-titleb">需要帮助的小伙伴，请联系以上人员</div>
 </div>
-<c:if test="${usermeg.roleflag eq 'manager'}">
 <div class="global-navb height_whole guide-bg">
-	<div class="submit-btn" id="loginout" onclick="codebarScann(codebarScannCallback);" >扫码发奖</div>
+	<c:if test="${usermeg.roleflag eq 'manager'}">
+		<div class="submit-btn" id="loginout" onclick="codebarScann(codebarScannCallback);" >扫码发奖</div>
+	</c:if>
 </div>
-</c:if>
  
 <!--<div class="global-navb">
 	<h2 class="global-titleb">帮助</h2>
